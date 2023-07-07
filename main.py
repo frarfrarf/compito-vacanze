@@ -43,7 +43,12 @@ while True:
         
         LETTURA_BACK = Button((110, 460), (100, 50), screen, "TORNA INDIETRO")
         LETTURA_BACK.draw()
-        LETTURA_BACK.changeColor()
+
+         
+        if LETTURA_BACK.rect.collidepoint(MOUSE_POS):
+
+            LETTURA_BACK.changeColor()
+            LETTURA_BACK.draw()
     
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -71,7 +76,10 @@ while True:
         
         SFERA_BACK = Button((110, 460), (100, 50), screen, "TORNA INDIETRO")
         SFERA_BACK.draw()
-        SFERA_BACK.changeColor()
+
+        if SFERA_BACK.rect.collidepoint(MOUSE_POS):
+            SFERA_BACK.changeColor()
+            SFERA_BACK.draw()
         
 
         for event in pygame.event.get():
@@ -85,7 +93,7 @@ while True:
         pygame.display.update()
 
     if not start:
-        LETTURA_BUTTON= Button((640, 460), (120, 50), screen, "LETTURA TAROCCHI")
+        LETTURA_BUTTON= Button((100, 300), (120, 50), screen, "LETTURA TAROCCHI")
         SFERA_BUTTON= Button((43, 460), (120, 50), screen, "CONSULTA LA SFERA")
         LETTURA_BUTTON.draw()
         SFERA_BUTTON.draw()

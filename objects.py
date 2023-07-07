@@ -24,6 +24,7 @@ class Button():
     
     def draw(self):
         # pygame.draw.rect(self.image, colore, (4, 4, bordo_width, bordo_height), spessore_bordo)
+        self.image.fill(self.colore)
         font = pygame.font.SysFont("Spectral" , 15)
         scritta = font.render(f"{self.text}", True, (0, 0, 0))
         posx = self.size[0] // 2 - scritta.get_width() // 2
