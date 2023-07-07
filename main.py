@@ -37,7 +37,7 @@ while True:
                 sys.exit()
            
                 
-    if start and not sfera: 
+    if start and not sfera:     #lettura
         pygame.display.set_caption('lettura')
         LETTURA_MOUSE_POS= pygame.mouse.get_pos()
         
@@ -70,7 +70,7 @@ while True:
         pygame.display.update()
 
     
-    if start and sfera:
+    if start and sfera:    #sfera
         pygame.display.set_caption('sfera')
         SFERA_MOUSE_POS= pygame.mouse.get_pos()
         
@@ -92,7 +92,7 @@ while True:
 
         pygame.display.update()
 
-    if not start:
+    if not start:    #main menu
         LETTURA_BUTTON= Button((100, 300), (120, 50), screen, "LETTURA TAROCCHI")
         SFERA_BUTTON= Button((43, 460), (120, 50), screen, "CONSULTA LA SFERA")
         LETTURA_BUTTON.draw()
