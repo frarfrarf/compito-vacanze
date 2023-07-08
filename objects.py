@@ -46,7 +46,7 @@ class Button():
         elif self.colore== self.colore2:
             self.colore = self.colore1
         
-class Carta:    
+class Carta():    
     def __init__(self, screen, pos, size) -> None:
         self.screen = screen
         self.rect = pygame.Rect(pos[0], pos[1], size[0], size[1]) #questi dati andranno cabiati ma per ora fingeremo che andranno bene
@@ -202,7 +202,7 @@ class Sfera():
                'Il mondo gira a tuo favore','Mi dispiace','Sarà per la prossima volta','Fifty fifty','Ho chiesto in giro e mi hanno detoo di no',
                'Si,corri', 'Se è il cuore a dirtelo allora è la cosa giusta']
         l= random.choice(lista)  
-        self.draw_text(l,'Spectral',(0,0,0), (100,50),(100,50)) 
+        self.draw_text(l,'Spectral',(255,255,255), (100,50),(100,50)) 
 
     
     def checkForInput(self,position):
