@@ -3,6 +3,7 @@ import sys
 from pygame.locals import *
 import random
 from objects import *
+from pygame import mixer
 
 
 pygame.init()
@@ -19,6 +20,12 @@ background = pygame.image.load('immagini/cielonotte3.png')
 background = pygame.transform.scale(background,window_size)
 
 #text_font = pygame.font.SysFont("Spectral" , 30)
+
+# mixer.init()
+
+# mixer.music.load('musichetta.mp3')   #scegli canzoncella
+# mixer.music.set_volume(15)
+# mixer.music.play
 
 start= False 
 sfera= False
