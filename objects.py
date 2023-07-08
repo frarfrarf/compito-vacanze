@@ -173,6 +173,7 @@ class Carta:
             self.image = pygame.image.load('immagini/mondo.png')
             self.image = pygame.transform.scale(self.image, size)
             self.draw_text("Il periodo complesso che satvi affrontando si sta concludendo per questo senti il peso del mondo su di te, se necessario chiedi aiuto, ricorda però che dopo aver concluso un percoso se ne aprirà uno nuovo subito dopo.", self.draw_text, (0,0,0), 220,150)
+        
 
     def checkForInput(self,position):
         if position[0] in range(self.rect.left, self.rect.right) and position[1] in range(self.rect.top, self.rect.bottom):
