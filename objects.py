@@ -196,7 +196,8 @@ class Sfera():
     def scrivi(self):
         lista=['Si', 'No', 'Forse', 'Non sperare che vada tutto per il meglio', 'Solo tu sai la risposta','Aspetta e spera',
                'Io questo non posso saperlo', 'Hai già la risposta a questa domanda','Guarda le stelle, ti stanno dicendo di no',
-               'Il mondo gira a tuo favore','Mi dispiace','Sarà per la prossima volta','50/50']
+               'Il mondo gira a tuo favore','Mi dispiace','Sarà per la prossima volta','Fifty fifty','Ho chiesto in giro e mi hanno detoo di no',
+               'Si,corri', 'Se è il cuore a dirtelo allora è la cosa giusta']
         l= random.choice(lista)  
         self.draw_text(l) 
 
