@@ -4,6 +4,8 @@ import sys
 from pygame.locals import *
 import random
 
+#problemi uguali/simili sia con sfera che con carta, le scritte compaiono solo per poco (non stampa anche le carte)
+
 
 #text_font = pygame.font.SysFont("Spectral" , 30)
 
@@ -199,7 +201,7 @@ class Sfera():
                'Il mondo gira a tuo favore','Mi dispiace','Sarà per la prossima volta','Fifty fifty','Ho chiesto in giro e mi hanno detoo di no',
                'Si,corri', 'Se è il cuore a dirtelo allora è la cosa giusta']
         l= random.choice(lista)  
-        self.draw_text(l) 
+        self.draw_text(l,'Spectral',(0,0,0), (100,50),(100,50)) 
 
     
     def checkForInput(self,position):
