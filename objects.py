@@ -25,7 +25,7 @@ class Button():
     def draw(self):
         # pygame.draw.rect(self.image, colore, (4, 4, bordo_width, bordo_height), spessore_bordo)
         self.image.fill(self.colore)
-        font = pygame.font.SysFont("Spectral" , 15)
+        font = pygame.font.SysFont("Spectral" , 30)
         scritta = font.render(f"{self.text}", True, (0, 0, 0))
         posx = self.size[0] // 2 - scritta.get_width() // 2
         posy = self.size[1] // 2 - scritta.get_height() // 2
@@ -172,6 +172,35 @@ class Carta:
             self.image = pygame.transform.scale(self.image, size)
             self.draw_text("Il periodo complesso che satvi affrontando si sta concludendo per questo senti il peso del mondo su di te, se necessario chiedi aiuto, ricorda però che dopo aver concluso un percoso se ne aprirà uno nuovo subito dopo.", self.draw_text, (0,0,0), 220,150)
 
+    def checkForInput(self,position):
+        if position[0] in range(self.rect.left, self.rect.right) and position[1] in range(self.rect.top, self.rect.bottom):
+            return True
+        return False
+    
+
+class Sfera():
+    def __init__(self,screen,pos,size):
+        self.screen = screen
+        self.rect = pygame.Rect(pos[0], pos[1], size[0], size[1]) 
+        self.image = pygame.image.load('immagini/sferascuscu.png')
+        self.image = pygame.transform.scale(self.image, size)
+
+    def draw_text (self, text, font, text_col, x, y):
+        font=pygame.font.SysFont("Spectral" , 50)
+        img = font.render(text, True, text_col)
+        self.screen.blit(img, (x,y))
+    
+    def draw(self):
+        self.screen.blit(self.image, self.rect)
+
+    def scrivi(self):
+        lista=['Si', 'No', 'Forse', 'Non sperare che vada tutto per il meglio', 'Solo tu sai la risposta','Aspetta e spera',
+               'Io questo non posso saperlo', 'Hai già la risposta a questa domanda','Guarda le stelle, ti stanno dicendo di no',
+               'Il mondo gira a tuo favore','Mi dispiace','Sarà per la prossima volta','50/50']
+        l= random.choice(lista)  
+        self.draw_text(l) 
+
+    
     def checkForInput(self,position):
         if position[0] in range(self.rect.left, self.rect.right) and position[1] in range(self.rect.top, self.rect.bottom):
             return True

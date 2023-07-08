@@ -41,7 +41,7 @@ while True:
         pygame.display.set_caption('lettura')
         LETTURA_MOUSE_POS= pygame.mouse.get_pos()
         
-        LETTURA_BACK = Button((110, 460), (100, 50), screen, "TORNA INDIETRO")
+        LETTURA_BACK = Button((50, 500), (50, 50), screen, "<--")
         LETTURA_BACK.draw()
 
          
@@ -74,7 +74,7 @@ while True:
         pygame.display.set_caption('sfera')
         SFERA_MOUSE_POS= pygame.mouse.get_pos()
         
-        SFERA_BACK = Button((110, 460), (100, 50), screen, "TORNA INDIETRO")
+        SFERA_BACK = Button((50, 500), (50, 50), screen, "<--")
         SFERA_BACK.draw()
 
         if SFERA_BACK.rect.collidepoint(MOUSE_POS):
@@ -90,11 +90,19 @@ while True:
                 if SFERA_BACK.checkForInput(SFERA_MOUSE_POS):
                     start = False
 
+        sfera=Sfera(screen, (250,70),(362,463))
+        sfera.draw()
+
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if sfera.checkForInput(MOUSE_POS):
+                   sfera.scrivi()
+
         pygame.display.update()
 
     if not start:    #main menu
-        LETTURA_BUTTON= Button((100, 300), (120, 50), screen, "LETTURA TAROCCHI")
-        SFERA_BUTTON= Button((43, 460), (120, 50), screen, "CONSULTA LA SFERA")
+        LETTURA_BUTTON= Button((250, 220), (300, 50), screen, "Lettura tarocchi")
+        SFERA_BUTTON= Button((250, 320), (300, 50), screen, "Consulta la sfera")
         LETTURA_BUTTON.draw()
         SFERA_BUTTON.draw()
 
