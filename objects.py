@@ -92,7 +92,7 @@ class Carta():
         elif n==5:
             self.image = pygame.image.load('immagini/ierofante.png')
             self.image = pygame.transform.scale(self.image, size)
-            self.draw_text("FIdati di te stesso, non lasciarti influenzare ne dalle scelte degli altri ne da tutto ciò che ti circonda, qualsiasi sia il probelma che ti sta frenando sappi che hai le risposte a tutto dentro di te.", self.draw_text, (0,0,0), 220,150)
+            self.draw_text("Fidati di te stesso, non lasciarti influenzare ne dalle scelte degli altri ne da tutto ciò che ti circonda, qualsiasi sia il probelma che ti sta frenando sappi che hai le risposte a tutto dentro di te.", self.draw_text, (0,0,0), 220,150)
        
         elif n==6:
             self.image = pygame.image.load('immagini/amanti.png')
@@ -199,7 +199,7 @@ class Sfera():
     def scrivi(self):
         lista=['Si', 'No', 'Forse', 'Non sperare che vada tutto per il meglio', 'Solo tu sai la risposta','Aspetta e spera',
                'Io questo non posso saperlo', 'Hai già la risposta a questa domanda','Guarda le stelle, ti stanno dicendo di no',
-               'Il mondo gira a tuo favore','Mi dispiace','Sarà per la prossima volta','Fifty fifty','Ho chiesto in giro e mi hanno detoo di no',
+               'Il mondo gira a tuo favore','Mi dispiace','Sarà per la prossima volta','Fifty fifty','Ho chiesto in giro e mi hanno detto di no',
                'Si,corri', 'Se è il cuore a dirtelo allora è la cosa giusta']
         l= random.choice(lista)  
         self.draw_text(l,'Spectral',(255,255,255), (100,50),(100,50)) 
