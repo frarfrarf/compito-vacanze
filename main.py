@@ -43,49 +43,66 @@ while True:
                 pygame.quit()
                 sys.exit()
            
-    carta=Carta(screen, (300,50),(250,420))            
-    if start and not sfera:     #lettura
+    carta=Carta(screen, (300,50),(250,420))   
+
+    if start and not sfera:                                        #lettura
         pygame.display.set_caption('lettura')
         LETTURA_MOUSE_POS= pygame.mouse.get_pos()
         
         LETTURA_BACK = Button((50, 500), (50, 50), screen, "<--")
         LETTURA_BACK.draw()
-         
+
+        girata = False    
+        
+
         if LETTURA_BACK.rect.collidepoint(MOUSE_POS):
 
             LETTURA_BACK.changeColor()
             LETTURA_BACK.draw()
     
+
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if LETTURA_BACK.checkForInput(LETTURA_MOUSE_POS):
                     start = False
                     sfera = False
-        
-        
-        carta.draw()
+                    
+                if carta.checkForInput(LETTURA_MOUSE_POS):
+                   girata= True
+                #    carta.genera((250,420))
+                #    carta.draw()
+                   
+        if girata== True:
+             carta.genera((250,420))
+             carta.draw()
+
+        elif girata == False:
+            carta.draw()
        
 
-        for event in pygame.event.get():
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if carta.checkForInput(MOUSE_POS):
-                   carta.genera((250,420))
-                   carta.draw()
+        #for event in pygame.event.get():
+            # if event.type == pygame.MOUSEBUTTONDOWN:
+            #     if carta.checkForInput(LETTURA_MOUSE_POS):
+            #        carta.genera((250,420))
+            #        carta.draw()
 
 
 
         pygame.display.update()
 
     
-    if start and sfera:    #sfera
+    if start and sfera:                                      #sfera
         pygame.display.set_caption('sfera')
         SFERA_MOUSE_POS= pygame.mouse.get_pos()
         
         SFERA_BACK = Button((50, 500), (50, 50), screen, "<--")
         SFERA_BACK.draw()
+        scritta = False
 
         if SFERA_BACK.rect.collidepoint(MOUSE_POS):
             SFERA_BACK.changeColor()
@@ -101,18 +118,24 @@ while True:
                 if SFERA_BACK.checkForInput(SFERA_MOUSE_POS):
                     start = False
                     sfera = False
+                if sferascuscu.checkForInput(MOUSE_POS):
+                   #sferascuscu.scrivi()
+                   scritta= True
+                   
+        if scritta== True:
+            sferascuscu.scrivi()
 
         
         sferascuscu.draw()
         
-        for event in pygame.event.get():
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if sferascuscu.checkForInput(MOUSE_POS):
-                   sferascuscu.scrivi()
+        # for event in pygame.event.get():
+        #     if event.type == pygame.MOUSEBUTTONDOWN:
+        #         if sferascuscu.checkForInput(MOUSE_POS):
+        #            sferascuscu.scrivi()
 
         pygame.display.update()
 
-    if not start:    #main menu
+    if not start:                                           #main menu
         LETTURA_BUTTON= Button((250, 220), (300, 50), screen, "Lettura tarocchi")
         SFERA_BUTTON= Button((250, 320), (300, 50), screen, "Consulta la sfera")
         LETTURA_BUTTON.draw()

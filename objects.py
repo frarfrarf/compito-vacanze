@@ -60,6 +60,11 @@ class Carta():
     
     def draw(self):
         self.screen.blit(self.image, self.rect)
+    
+    def drawgiro(self,size):
+        self.image = pygame.image.load('immagini/dietro.png')
+        self.image = pygame.transform.scale(self.image, size)
+        self.screen.blit(self.image, self.rect)
 
     def genera(self,size):
         n= random.randint(0,22)   
