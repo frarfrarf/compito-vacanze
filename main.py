@@ -45,8 +45,15 @@ while True:
            
     carta=Carta(screen, (300,50),(250,420))   
 
-    if start and not sfera:                                        #lettura
+    while start and not sfera:                                       #lettura
+        sfondino = pygame.image.load('immagini/cielonotte lettura.png')
+        sfondino = pygame.transform.scale(sfondino,window_size)
+
+        screen.fill((0 ,0 ,0))
+        screen.blit (sfondino, (0,0))
+
         pygame.display.set_caption('lettura')
+
         LETTURA_MOUSE_POS= pygame.mouse.get_pos()
         
         LETTURA_BACK = Button((50, 500), (50, 50), screen, "<--")
@@ -78,8 +85,15 @@ while True:
                 #    carta.draw()
                    
         if girata== True:
+             screen.fill((0 ,0 ,0))
+             screen.blit (sfondino, (0,0))
              carta.genera((250,420))
              carta.draw()
+             if LETTURA_BACK.rect.collidepoint(MOUSE_POS):
+
+                LETTURA_BACK.changeColor()
+                LETTURA_BACK.draw()
+    
 
         elif girata == False:
             carta.draw()
@@ -96,7 +110,7 @@ while True:
         pygame.display.update()
 
     
-    if start and sfera:                                      #sfera
+    while start and sfera:                                      #sfera
         pygame.display.set_caption('sfera')
         SFERA_MOUSE_POS= pygame.mouse.get_pos()
         
@@ -121,12 +135,22 @@ while True:
                 if sferascuscu.checkForInput(MOUSE_POS):
                    #sferascuscu.scrivi()
                    scritta= True
-                   
+        
+        
+        
+        
         if scritta== True:
+            screen.fill((0 ,0 ,0))
+            screen.blit (background, (0,0))
             sferascuscu.scrivi()
-
+        
+        if SFERA_BACK.rect.collidepoint(MOUSE_POS):
+            SFERA_BACK.changeColor()
+            SFERA_BACK.draw()
         
         sferascuscu.draw()
+        
+        
         
         # for event in pygame.event.get():
         #     if event.type == pygame.MOUSEBUTTONDOWN:
