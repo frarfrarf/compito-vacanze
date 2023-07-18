@@ -46,17 +46,17 @@ while True:
     carta=Carta(screen, (300,50),(250,420))   
 
     while start and not sfera:                                       #lettura
-        sfondino = pygame.image.load('immagini/cielonotte lettura.png')
-        sfondino = pygame.transform.scale(sfondino,window_size)
+        # sfondino = pygame.image.load('immagini/cielonotte lettura.png')
+        # sfondino = pygame.transform.scale(sfondino,window_size)
 
-        screen.fill((0 ,0 ,0))
-        screen.blit (sfondino, (0,0))
+        # screen.fill((0 ,0 ,0))
+        # screen.blit (sfondino, (0,0))
 
         pygame.display.set_caption('lettura')
 
         LETTURA_MOUSE_POS= pygame.mouse.get_pos()
         
-        LETTURA_BACK = Button((50, 500), (50, 50), screen, "<--")
+        LETTURA_BACK = Button((700, 50), (50, 50), screen, "<--")
         LETTURA_BACK.draw()
 
         girata = False    
@@ -86,7 +86,7 @@ while True:
                    
         if girata== True:
              screen.fill((0 ,0 ,0))
-             screen.blit (sfondino, (0,0))
+             screen.blit (background, (0,0))
              carta.genera((250,420))
              carta.draw()
              if LETTURA_BACK.rect.collidepoint(MOUSE_POS):
@@ -111,10 +111,17 @@ while True:
 
     
     while start and sfera:                                      #sfera
+        # sfondone= pygame.image.load('immagini/cielonotte sfera.png')
+        # sfondone = pygame.transform.scale(sfondone,window_size)
+
+        # screen.fill((0 ,0 ,0))
+        # screen.blit (sfondone, (0,0))
+        
+        
         pygame.display.set_caption('sfera')
         SFERA_MOUSE_POS= pygame.mouse.get_pos()
         
-        SFERA_BACK = Button((50, 500), (50, 50), screen, "<--")
+        SFERA_BACK = Button((700, 50), (50, 50), screen, "<--")
         SFERA_BACK.draw()
         scritta = False
 
@@ -122,7 +129,7 @@ while True:
             SFERA_BACK.changeColor()
             SFERA_BACK.draw()
         
-        sferascuscu=Sfera(screen, (250,70),(362,463))
+        sferascuscu=Sfera(screen, (240,50),(342,443))
         
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -137,7 +144,7 @@ while True:
                    scritta= True
         
         
-        
+        sferascuscu.draw()
         
         if scritta== True:
             screen.fill((0 ,0 ,0))
@@ -148,7 +155,7 @@ while True:
             SFERA_BACK.changeColor()
             SFERA_BACK.draw()
         
-        sferascuscu.draw()
+        
         
         
         
