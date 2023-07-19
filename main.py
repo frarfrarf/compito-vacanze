@@ -23,7 +23,7 @@ background = pygame.transform.scale(background,window_size)
 
 # mixer.init()
 
-# mixer.music.load('musichetta.mp3')   #scegli canzoncella
+# mixer.music.load('non mi convince.mp3')   #scegli canzoncella
 # mixer.music.set_volume(15)
 # mixer.music.play
 
@@ -191,13 +191,16 @@ while True:
         
           
         for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if LETTURA_BUTTON.checkForInput(MOUSE_POS):
                    start= True
                 if SFERA_BUTTON.checkForInput(MOUSE_POS):
                      start = True
                      sfera = True
-                     
+               
     
     
 
