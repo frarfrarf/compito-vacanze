@@ -44,6 +44,7 @@ while True:
                 sys.exit()
            
     carta=Carta(screen, (300,50),(250,420))   
+    sferascuscu=Sfera(screen, (240,50),(342,443))
 
     while start and not sfera:                                       #lettura
         # sfondino = pygame.image.load('immagini/cielonotte lettura.png')
@@ -129,7 +130,7 @@ while True:
             SFERA_BACK.changeColor()
             SFERA_BACK.draw()
         
-        sferascuscu=Sfera(screen, (240,50),(342,443))
+        #sferascuscu=Sfera(screen, (240,50),(342,443))
         
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

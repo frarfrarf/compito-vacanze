@@ -240,7 +240,7 @@ class Sfera():
                'Il mondo gira a tuo favore','Mi dispiace','Sarà per la prossima volta','Fifty fifty','Ho chiesto in giro e mi hanno detto di no',
                'Si,corri', 'Se è il cuore a dirtelo allora è la cosa giusta']
         l= random.choice(lista)  
-        self.draw_text(l,'Spectral',(0,0,0), (200,200),(100,100)) 
+        self.draw_text(l,'Spectral',(255,255,255), 50,525) 
 
     
     def checkForInput(self,position):
