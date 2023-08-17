@@ -53,7 +53,7 @@ while True:
         # screen.fill((0 ,0 ,0))
         # screen.blit (sfondino, (0,0))
 
-        pygame.display.set_caption('lettura')
+        pygame.display.set_caption('Lettura')
 
         LETTURA_MOUSE_POS= pygame.mouse.get_pos()
         
@@ -118,8 +118,11 @@ while True:
         # screen.fill((0 ,0 ,0))
         # screen.blit (sfondone, (0,0))
         
+
+
         
-        pygame.display.set_caption('sfera')
+        
+        pygame.display.set_caption('Sfera')
         SFERA_MOUSE_POS= pygame.mouse.get_pos()
         
         SFERA_BACK = Button((700, 50), (50, 50), screen, "<--")
@@ -168,6 +171,7 @@ while True:
         pygame.display.update()
 
     if not start:                                           #main menu
+        pygame.display.set_caption('Scelte')
         LETTURA_BUTTON= Button((250, 220), (300, 50), screen, "Lettura tarocchi")
         SFERA_BUTTON= Button((250, 320), (300, 50), screen, "Consulta la sfera")
         LETTURA_BUTTON.draw()

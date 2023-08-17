@@ -238,7 +238,7 @@ class Sfera():
         lista=['Si', 'No', 'Forse', 'Non sperare che vada tutto per il meglio', 'Solo tu sai la risposta','Aspetta e spera',
                'Io questo non posso saperlo', 'Hai già la risposta a questa domanda','Guarda le stelle, ti stanno dicendo di no',
                'Il mondo gira a tuo favore','Mi dispiace','Sarà per la prossima volta','Fifty fifty','Ho chiesto in giro e mi hanno detto di no',
-               'Si,corri', 'Se è il cuore a dirtelo allora è la cosa giusta']
+               'Si,corri', 'Se è il cuore a dirtelo allora è la cosa giusta','non farlo, andrà male']
         l= random.choice(lista)  
         self.draw_text(l,'Spectral',(255,255,255), 50,525) 
 
