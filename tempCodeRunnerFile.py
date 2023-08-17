@@ -1,1 +1,2 @@
-pygame.display.update()
+sfera = False
+                        # spiego= False
