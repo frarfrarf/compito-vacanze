@@ -109,8 +109,8 @@ class Carta():
         elif n==6:
             self.image = pygame.image.load('immagini/amanti.png')
             self.image = pygame.transform.scale(self.image, size)
-            self.draw_text("La carta della dualità non solo interiore, ma anche come confronto con un altra persona,", self.draw_text, (255,255,255), 50,510)
-            self.draw_text("questa carta indica la nscità di una relazione amorosa o non.", self.draw_text, (255,255,255), 50,525)
+            self.draw_text("La carta della dualità non solo interiore, ma anche come confronto con un'altra persona,", self.draw_text, (255,255,255), 50,510)
+            self.draw_text("questa carta indica la nascità di una relazione amorosa o non.", self.draw_text, (255,255,255), 50,525)
         
         elif n==7:
             self.image = pygame.image.load('immagini/carro.png')
